@@ -40,3 +40,17 @@ a {
 #footer-p {
   color: gray
 }
+
+#article-menu {
+  text-decoration: underline;
+  color: white;
+}
+
+#article-menu:hover,
+#article-menu:active,
+#article-menu:focus-visible {
+  text-shadow: 0px 0px 10px rgba(0, 191, 255, 0.8),
+  0px 0px 20px rgba(0, 191, 255, 0.8),
+  0px 0px 40px rgba(0, 191, 255, 0.8);
+  color: #458cfe
+}
