@@ -8,6 +8,7 @@ import {
     SelectTrigger,
     SelectValue,
   } from "@/components/ui/select"
+import { blogPosts } from "@/data/blogPosts"
 
 export function ArticleSection() {
     return (
@@ -26,52 +27,66 @@ export function ArticleSection() {
                     <a href="#" id="article-menu">Ganeral</a>
                 </div>
                 <div className="lg:w-1/4 w-full md:mx-0 mx-20 gap-4 flex flex-col items-center">  
-                    <Input type="text" placeholder="Serch" className="h-[40px]"/>
+                    <Input type="text" placeholder="Serch" className="h-[40px] text-white"/>
                     <div className="lg:hidden w-full">
                         <p className="text-white mb-2">Category</p>
                         {/* Dropdown menu */}
                         <Select>
-                            <SelectTrigger className="w-full">
-                                <SelectValue placeholder="Select a fruit" />
+                            <SelectTrigger className="w-full text-white">
+                                <SelectValue placeholder="Select a Category" />
                             </SelectTrigger>
                             <SelectContent>
                                 <SelectGroup>
-                                <SelectLabel>Fruits</SelectLabel>
-                                <SelectItem value="apple">Apple</SelectItem>
-                                <SelectItem value="banana">Banana</SelectItem>
-                                <SelectItem value="blueberry">Blueberry</SelectItem>
-                                <SelectItem value="grapes">Grapes</SelectItem>
-                                <SelectItem value="pineapple">Pineapple</SelectItem>
+                                <SelectLabel>Category</SelectLabel>
+                                <SelectItem value="apple">Tech Stacks</SelectItem>
+                                <SelectItem value="banana">Tool</SelectItem>
+                                <SelectItem value="blueberry">Inspiration</SelectItem>
+                                <SelectItem value="grapes">Ganeral</SelectItem>
                                 </SelectGroup>
                             </SelectContent>
                         </Select>
                     </div>
                 </div>
             </div>
-            {/* Article */}
+            {/* BlogCard */}
             <div className="lg:mt-10 md:mt-20 mt-20">
-            <Article date="----March 14,2025" topic="หัวข้อเกี่ยวกับการเขียนโค้ด" description="// Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum assumenda asperiores molestias mollitia, enim id eveniet laboriosam ipsam laborum exercitationem fugit temporibus, consequuntur consequatur maiores veniam numquam eligendi fuga porro!"/>
-            <Article date="----March 14,2025" topic="หัวข้อเกี่ยวกับการเขียนโค้ด" description="// Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum assumenda asperiores molestias mollitia, enim id eveniet laboriosam ipsam laborum exercitationem fugit temporibus, consequuntur consequatur maiores veniam numquam eligendi fuga porro!"/>
-            <Article date="----March 14,2025" topic="หัวข้อเกี่ยวกับการเขียนโค้ด" description="// Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum assumenda asperiores molestias mollitia, enim id eveniet laboriosam ipsam laborum exercitationem fugit temporibus, consequuntur consequatur maiores veniam numquam eligendi fuga porro!"/>
+                {blogPosts.map((post) => (
+                    <BlogCard
+                        key={post.id}
+                        category={post.category}
+                        date={post.date}
+                        topic={post.topic}
+                        description={post.description}
+                        image={post.image}
+                    />
+                ))}
             </div>
         </>
     )
 }
 
-export function Article({date,topic,description}) {
+export function BlogCard({category,date,topic,description,image}) {
     return (
-        <div className="flex flex-col-reverse py-6 px-10 my-8 lg:flex-row bg-[#181818] lg:mx-35 mx-15 lg:gap-8 ">
-            <div className="mt-5">
-                <p className="text-gray-400">{date}</p>
-                <p className="text-blue-400 ">{topic}</p>
-                <p className="text-white mt-3">{description}</p>
+        <div className="flex flex-col-reverse justify-between py-6 px-10 my-8 lg:flex-row bg-[#181818] lg:mx-35 mx-15 lg:gap-8 ">
+            <div className="mt-5 lg:mt-0">
+                <p className="text-white mb-4 bg-pink-500 w-20 text-center rounded-2xl text-[12px] h-6 content-center">{category}</p>
+                <p className="text-gray-400 text-sm">-------{date}</p>
+                <a href="#">
+                    <h2 className="text-blue-400 mt-1">{topic}</h2>
+                </a>
+                <p className="text-white mt-3 text-sm">{description}</p>
             </div>
-            <div>
-                <img src="\public\IMG\blog-code.jpg" alt="" className="lg:w-[700px] rounded-[30px]"/>
+            <div className="lg:w-[300px] lg:h-auto flex-shrink-0">
+                <a href="#">
+                    <img src={image} alt="" className="w-full h-auto aspect-[5/3] object-cover rounded-[30px]"/>
+                </a>
             </div>
         </div>
     )
 }
+
+
+
 
 
 
