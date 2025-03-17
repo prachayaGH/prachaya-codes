@@ -9,7 +9,7 @@ export function Herosection() {
         <div className="flex flex-col items-center md:flex-row gap-20 px-15 mt-20">
             {/* Left Content */}
             <div className="">
-                <img src="\public\IMG\profileHome.png" alt="" 
+                <img src="\IMG\profileHome.png" alt="Profile Image"  
                     className="w-full md:w-xl object-cover "/>
             </div>
             
