@@ -32,13 +32,30 @@ h1,h3 {
   font-style: bold;
 }
 
+.sub-heading {
+  font-family: "Roboto Slab", serif;
+  font-style: bold;
+  font-size: 30px;
+  color: white;
+}
+
+@media (min-width: 1280px) { 
+  .sub-heading {
+      font-size: 40px;
+  }
+}
+
+.text-primary {
+  color: white
+}
+
+.text-secondary {
+  color: gray
+}
+
 a {
   font-family: "Montserrat", sans-serif;
   font-style: normal;
-}
-
-#footer-p {
-  color: gray
 }
 
 #article-menu {
@@ -49,8 +66,9 @@ a {
 #article-menu:hover,
 #article-menu:active,
 #article-menu:focus-visible {
-  text-shadow: 0px 0px 10px rgba(0, 191, 255, 0.8),
-  0px 0px 20px rgba(0, 191, 255, 0.8),
-  0px 0px 40px rgba(0, 191, 255, 0.8);
+  text-shadow: 
+                0px 0px 10px rgba(0, 191, 255, 0.8),
+                0px 0px 20px rgba(0, 191, 255, 0.8),
+                0px 0px 40px rgba(0, 191, 255, 0.8);
   color: #458cfe
 }
