@@ -2,6 +2,7 @@ import { Github } from 'lucide-react';
 import { Linkedin } from 'lucide-react';
 import { AtSign } from 'lucide-react';
 import { Instagram } from 'lucide-react';
+import profileHome from '@/assets/IMG/profileHome.png'
 
 export function Herosection() {
   return (
@@ -9,7 +10,7 @@ export function Herosection() {
         <div className="flex flex-col items-center md:flex-row gap-20 px-15 mt-20">
             {/* Left Content */}
             <div className="">
-                <img src="\IMG\profileHome.png" alt="Profile Image"  
+                <img src={profileHome} alt={profileHome}  
                     className="w-full md:w-xl object-cover"/>
             </div>
             
