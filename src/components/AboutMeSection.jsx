@@ -1,6 +1,6 @@
 import {techStacks, tools} from "../data/techSkills"
 import { useState } from "react";
-import profileAboutMe from '@/assets/IMG/profileAboutMe.png'
+import profileAboutme from '@/assets/IMG/profileAboutme.png'
 
 export function AboutMeSection() {
     return (
@@ -9,7 +9,7 @@ export function AboutMeSection() {
                 <h3 className="sub-heading text-start px-6 py-2">About Me -----------------------------</h3>
 
                 <div className="lg:flex lg:flex-row flex flex-col items-center justify-center px-20 pb-10 gap-10">
-                    <img src={profileAboutMe} alt={profileAboutMe}
+                    <img src={profileAboutme} alt={profileAboutme}
                     className="w-xs"/>
                     <p className="w-full text-start text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, ipsam? Dolor tempore officiis totam, quas esse eligendi odio sunt. Explicabo officia non laborum alias? Possimus commodi exercitationem veniam quibusdam in.</p>
                 </div>
