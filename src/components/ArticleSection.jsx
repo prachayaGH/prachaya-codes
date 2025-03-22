@@ -9,8 +9,12 @@ import {
     SelectValue,
   } from "@/components/ui/select"
 import { blogPosts } from "@/data/blogPosts"
+import { useState } from "react";
 
 export function ArticleSection() {
+    const categories = ["Highlight", "Cat", "Inspiration", "General"];
+    const [selectedCategory,setSelectedCategory] = useState("Highlight")
+    const filterArticle = blogPosts.filter(article => article.category === selectedCategory)
     return (
         <>
             {/* Header */}
@@ -21,27 +25,44 @@ export function ArticleSection() {
             {/* Article Navbar */}
             <div className='flex flex-row justify-between h-[80px] items-center pt-12 md:px-42'>
                 <div className='lg:flex gap-15 hidden'>
-                    <a href="#" id="article-menu">Tech Stacks</a>
-                    <a href="#" id="article-menu">Tool</a>
-                    <a href="#" id="article-menu">Inspiration</a>
-                    <a href="#" id="article-menu">Ganeral</a>
+                    {categories.map((category) => (
+                        <button 
+                            key={category} 
+                            disabled = {selectedCategory === category }
+                            className={
+                                `${selectedCategory === category 
+                                ? "bg-[#458cfe37] text-[#458cfe] px-5 py-1 underline" 
+                                : "text-white underline px-5 py-1"}`
+                            }
+                            onClick={() => setSelectedCategory(category)}  
+                        >{category}</button>
+                    ))}
                 </div>
                 <div className="lg:w-1/4 w-full md:mx-0 mx-20 gap-4 flex flex-col items-center">  
                     <Input type="text" placeholder="Serch" className="h-[40px] text-white"/>
                     <div className="lg:hidden w-full">
                         <p className=" mb-2">Category</p>
                         {/* Dropdown menu */}
-                        <Select>
+                        <Select value={selectedCategory} onValueChange={(value) => setSelectedCategory(value)}>
                             <SelectTrigger className="w-full text-white">
-                                <SelectValue placeholder="Select a Category" />
+                                <SelectValue />
                             </SelectTrigger>
                             <SelectContent>
                                 <SelectGroup>
                                 <SelectLabel>Category</SelectLabel>
-                                <SelectItem value="apple">Tech Stacks</SelectItem>
-                                <SelectItem value="banana">Tool</SelectItem>
-                                <SelectItem value="blueberry">Inspiration</SelectItem>
-                                <SelectItem value="grapes">Ganeral</SelectItem>
+                                {categories.map((category) => (
+                                    <SelectItem 
+                                        key={category} 
+                                        value={category}
+                                        disabled = {selectedCategory === category}
+                                        className={
+                                            `${selectedCategory === category 
+                                            ? "text-[#458cfe] border-[#458cfe37] border-2" 
+                                            : ""}`
+                                        }
+                                        
+                                    >{category}</SelectItem>
+                                ))}
                                 </SelectGroup>
                             </SelectContent>
                         </Select>
@@ -50,7 +71,7 @@ export function ArticleSection() {
             </div>
             {/* BlogCard */}
             <div className="lg:mt-10 md:mt-20 mt-20">
-                {blogPosts.map((posts) => (
+                {filterArticle.map((posts) => (
                     <BlogCard
                         key={posts.id}
                         post = {posts}
