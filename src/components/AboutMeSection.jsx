@@ -4,8 +4,8 @@ import profileAboutme from '@/assets/IMG/profileAboutme.png'
 
 export function AboutMeSection() {
     return (
-        <>
-            <div className="bg-[#181818] text-center lg:mx-35 mt-30 mx-15 ">
+        <div className="pt-30">
+            <div className="primary-color text-center mx-[10%]">
                 <h3 className="sub-heading text-start px-6 py-2">About Me -----------------------------</h3>
 
                 <div className="lg:flex lg:flex-row flex flex-col items-center justify-center px-20 pb-10 gap-10">
@@ -18,7 +18,7 @@ export function AboutMeSection() {
                 <h3 className="sub-heading lg:mx-40 mx-15">---------- Skills</h3>
                 <TechSkills />
             </div>
-        </>
+        </div>
     )
 }
 
@@ -32,13 +32,13 @@ export function TechSkills() {
             {/* Filter Buttons */}
             <div className="flex gap-4 mb-6 lg:mx-40 mt-4 mx-15">
                 <button 
-                    className={`${selectedSkill === "Tech Stacks" ? "bg-[#458cfe37] text-[#458cfe] px-5 py-1 underline" : "text-white underline px-5 py-1"}`}
+                    className={`${selectedSkill === "Tech Stacks" ? "primary-button" : "secondary-button"}`}
                     onClick={() => setSelectedSkill("Tech Stacks")}
                 >
                     Tech Stacks
                 </button>
                 <button 
-                    className={`${selectedSkill === "Tools" ? "bg-[#458cfe37] text-[#458cfe] px-5 py-1 underline" : "text-white underline px-5 py-1"}`}
+                    className={`${selectedSkill === "Tools" ? "primary-button" : "secondary-button"}`}
                     onClick={() => setSelectedSkill("Tools")}
                 >
                     Tools
@@ -60,7 +60,7 @@ export function TechSkills() {
 
 function SkillCard(props) {
     return (
-        <div className="border-blue-600 border-2 p-5 w-full flex gap-6 items-center">
+        <div className="primary-border-color border-2 p-5 w-full flex gap-6 items-center">
             <img src={props.post.image} alt="" className="w-[40px]"/>
             <p className="text-primary">{props.post.name}</p>
         </div>

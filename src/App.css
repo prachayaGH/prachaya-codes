@@ -1,5 +1,68 @@
+:root {
+  /* Colors */
+  --primary-color: #181818;
+  --secondary-color: #458cfe;
+  --third-color: #f6339a;
+
+  --primary-button-color: #458cfe37;
+
+  --primary-background-color: #000000;
+  --secondary-background-color: #ffffff;
+  /* Text-colors */
+  --primary-text-color: #ffffff;
+  --secondary-text-color: #000000;
+  --third-text-color: #155dfc;
+  --fourth-text-color: gray;
+
+  --primary-border-color: #155dfc;
+  /* Fonts */
+  --primary-font: "Roboto Slab", serif;
+  --secondary-font: "Montserrat", sans-serif;
+
+  /* Sizes */
+  /* #155dfc */
+
+  /* shadows */
+
+
+}
+.bg-primary {
+  background-color: var(--primary-background-color);
+}
+.bg-secondary {
+  background-color: var(--secondary-background-color);
+}
+
+.primary-color {
+  background-color: var(--primary-color);
+}
+.secondary-color {
+  background-color: var(--secondary-color);
+}
+
+.text-primary {
+  color: var(--primary-text-color);
+}
+.text-secondary {
+  color: var(--secondary-text-color);
+}
+.text-third {
+  color: var(--third-text-color);
+}
+.text-fourth {
+  color: var(--fourth-text-color);
+}
+
+.primary-border-color {
+  border-color: var(--primary-border-color);
+}
+
+.primary-button-color {
+  background-color: var(--primary-button-color)
+}
+
 #navbar-menu:hover {
-  color: #458cfe ;
+  color: var(--secondary-color) ;
   text-decoration: underline;
 }
 
@@ -18,7 +81,7 @@
   text-shadow: 0px 0px 10px rgba(0, 191, 255, 0.8),
               0px 0px 20px rgba(0, 191, 255, 0.8),
               0px 0px 40px rgba(0, 191, 255, 0.8);
-  color: #458cfe
+  color: var(--secondary-color)
 }
 
 #navbar-menu-secondary:hover,
@@ -28,12 +91,12 @@
 }
 
 h1,h3 {
-  font-family: "Roboto Slab", serif;
+  font-family: var(--primary-font);
   font-style: bold;
 }
 
 .sub-heading {
-  font-family: "Roboto Slab", serif;
+  font-family: var(--primary-font);
   font-style: bold;
   font-size: 30px;
   color: white;
@@ -45,16 +108,8 @@ h1,h3 {
   }
 }
 
-.text-primary {
-  color: white
-}
-
-.text-secondary {
-  color: gray
-}
-
 a {
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--secondary-font);
   font-style: normal;
 }
 
@@ -70,5 +125,28 @@ a {
                 0px 0px 10px rgba(0, 191, 255, 0.8),
                 0px 0px 20px rgba(0, 191, 255, 0.8),
                 0px 0px 40px rgba(0, 191, 255, 0.8);
-  color: #458cfe
+  color: var(--secondary-color)
+}
+
+.category-box {
+  background-color: var(--third-color);
+  width: 80px;
+  height: 24px;
+  border-radius: 16px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 24px
+}
+
+.primary-button {
+  background-color: var(--primary-button-color);
+  color: var(--third-text-color);
+  padding: 4px 20px;
+  text-decoration: underline;
+}
+
+.secondary-button {
+  color: var(--primary-text-color);
+  padding: 4px 20px;
+  text-decoration: underline;
 }
