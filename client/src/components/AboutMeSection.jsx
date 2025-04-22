@@ -46,7 +46,7 @@ export function TechSkills() {
             </div>
             
             {/* Display items */}
-            <div className="lg:grid lg:grid-cols-4 grid grid-cols-2 gap-8 lg:mx-40 mx-15">
+            <div className="lg:grid lg:grid-cols-4 md:grid md:grid-cols-2 grid grid-cols-1 gap-8 lg:mx-40 mx-15">
                 {skills.map((skill) => (
                     <SkillCard 
                         key={skill.id}

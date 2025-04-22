@@ -5,7 +5,7 @@ export function ProjectSection() {
         <div className="pt-20">
             <h1 className="sub-heading text-center">Project</h1>
             <h2 className="text-primary text-center">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</h2>
-            <div className="lg:grid lg:grid-cols-3 grid grid-cols-2 gap-3 lg:mx-35 mx-15 my-10">
+            <div className="lg:grid lg:grid-cols-3 md:grid md:grid-cols-2 grid grid-cols-1 gap-3 lg:mx-35 mx-15 my-10">
                 {ProjectData.map((project) => (
                     <ProjectCard 
                     key={project.id}
