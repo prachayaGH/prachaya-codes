@@ -4,7 +4,7 @@ import ReactMarkdown from "react-markdown"
 import { useParams } from "react-router-dom"
 import profileAboutme from '@/assets/IMG/profileAboutme.png'
 import 'bootstrap-icons/font/bootstrap-icons.css';
-import {Linkedin, Instagram} from 'lucide-react';
+import {Linkedin} from 'lucide-react';
 import {
     AlertDialog,
     AlertDialogAction,
