@@ -15,8 +15,8 @@ export function Navbar() {
                 </div>
                 {/* Desktop Menu */}
                 {location.pathname === '/' && ( // Show menu only on the Home page
-                    <div className="flex-1 flex justify-center">
-                        <ul className="lg:ml-[330px] md:flex md:gap-14 flex gap-8">
+                    <div className="flex-1 flex justify-center ">
+                        <ul className="hidden lg:ml-[330px] md:flex md:gap-14 gap-8">
                             <li id="navbar-menu">
                                 <Link to="home" smooth={true} duration={500}>Home</Link>
                             </li>
