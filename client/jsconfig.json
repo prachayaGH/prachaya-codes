@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+      "target": "es2020",       // หรือ "esnext"
+      "module": "esnext",       // หรือ "es2020", "node16", "nodenext"
+      "moduleResolution": "node",
+      "lib": ["dom", "esnext"],
+      "baseUrl": ".",
+      "paths": {
+        "@/*": ["./src/*"]
+      }
+    }
+  }
+  
