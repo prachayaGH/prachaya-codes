@@ -20,14 +20,18 @@ export function ProjectSection() {
 
 export function ProjectCard (props) {
     return (
-        <div className="primary-color p-3  flex flex-col gap-1">
-            <img src={props.post.image} alt="" />
-            <p className="text-primary text-center">{props.post.topic}</p>
-            <p className="text-primary text-center text-sm">{props.post.description}</p>
-            <p className="text-third text-[12px]">{props.post.techStack}</p>
-            <div className="text-end">
-                <a href={props.post.github} className="text-primary">#</a>
-                <a href={props.post.link} className="text-primary">#</a>
+        <div className="primary-color p-3 flex flex-col gap-1">
+            <div className="flex flex-col justify-between h-full">
+            <div className="">
+                <img src={props.post.image} alt="" />
+                <p className="text-primary text-center mt-2">{props.post.topic}</p>
+                <p className="text-primary text-center text-sm mt-2">{props.post.description}</p>
+                <p className="text-third text-[12px] mt-3">{props.post.techStack}</p>
+            </div>
+            <div className="text-end flex justify-end gap-3 mt-2">
+                <a href={props.post.github} className="text-[12px] text-gray-300 underline">Github</a>
+                <a href={props.post.link} className="text-[12px] text-gray-300 underline">Website</a>
+            </div>
             </div>
         </div>
     )

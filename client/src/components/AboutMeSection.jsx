@@ -11,7 +11,7 @@ export function AboutMeSection() {
                 <div className="lg:flex lg:flex-row flex flex-col items-center justify-center px-20 pb-10 gap-10">
                     <img src={profileAboutme} alt={profileAboutme}
                     className="w-xs"/>
-                    <p className="w-full text-start text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, ipsam? Dolor tempore officiis totam, quas esse eligendi odio sunt. Explicabo officia non laborum alias? Possimus commodi exercitationem veniam quibusdam in.</p>
+                    <p className="w-full text-start text-white">Full-Stack Developer with strong skills in JavaScript, TypeScript, React, Next.js, and FastAPI. Passionate about building user-focused web apps and RESTful APIs. Completed an intensive full-stack bootcamp with several hands-on projects. Eager to grow in a real-world development team environment.</p>
                 </div>
             </div>
             <div className="my-10">
@@ -32,13 +32,13 @@ export function TechSkills() {
             {/* Filter Buttons */}
             <div className="flex gap-4 mb-6 lg:mx-40 mt-4 mx-15">
                 <button 
-                    className={`${selectedSkill === "Tech Stacks" ? "primary-button" : "secondary-button"}`}
+                    className={`cursor-pointer ${selectedSkill === "Tech Stacks" ? "primary-button" : "secondary-button"}`}
                     onClick={() => setSelectedSkill("Tech Stacks")}
                 >
                     Tech Stacks
                 </button>
                 <button 
-                    className={`${selectedSkill === "Tools" ? "primary-button" : "secondary-button"}`}
+                    className={`cursor-pointer ${selectedSkill === "Tools" ? "primary-button" : "secondary-button"}`}
                     onClick={() => setSelectedSkill("Tools")}
                 >
                     Tools

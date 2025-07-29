@@ -1,15 +1,24 @@
 import express from "express";
 import cors from "cors";
 import postRouter from "./route/postRouter.mjs";
+import authRouter from "./route/authRouter.mjs";
+import cookieParser from "cookie-parser"; 
 
 const app = express();
 const PORT = process.env.PORT || 4001;
 
-app.use(cors());
+app.use(cookieParser());
+app.use(
+  cors({
+    origin: "http://localhost:5173", // หรือ frontend domain
+    credentials: true, // ⬅️ สำคัญมาก
+  })
+);
 app.use(express.json());
 app.use("/posts", postRouter);
+app.use("/auth", authRouter)
 
-app.get("/", (req, res) => {
+app.get("/test", (req, res) => {
   res.send("Hello World!");
 });
 

@@ -18,14 +18,14 @@ export function ArticleSection() {
     // เก็บข้อมูลการกึง API จากการคลิกเลือก category
     const [dataBlogPost, setDataBlogPost] = useState([]);
     // เก็บข้อมูลการกึง API จาก serach
-    const [searResult,setSearchResult] = useState([])
+    const [searchResult,setSearchResult] = useState([])
     const [currentPage, setCurrentPage] = useState(1);
     const [hasMore, setHasMore] = useState(true);
     const [isLoading, setIsLoading] = useState(false);
     const navigate = useNavigate()
 
     const limit = 6; // จำนวนบทความต่อหน้า
-
+    
     // ดึงข้อมูลจาก API
     const getData = async (page = 1, append = false) => {
         setIsLoading(true);
@@ -33,13 +33,11 @@ export function ArticleSection() {
             // กำหนด URL ตาม Category
             const url =
                 selectedCategory === "Highlight"
-                    ? `https://blog-post-project-api.vercel.app/posts?page=${page}&limit=${limit}`
-                    : `https://blog-post-project-api.vercel.app/posts?category=${selectedCategory}&page=${page}&limit=${limit}`;
+                    ? `http://localhost:4001/posts?page=${page}&limit=${limit}`
+                    : `http://localhost:4001/posts?category=${selectedCategory}&page=${page}&limit=${limit}`;
 
             const response = await axios.get(url);
-            const newPosts = response.data.posts;
-
-
+            const newPosts = response.data.data;
 
             // รวมบทความใหม่กับบทความเดิม (ถ้า append = true)
             setDataBlogPost((prevPosts) => (append ? [...prevPosts, ...newPosts] : newPosts));
@@ -73,8 +71,8 @@ export function ArticleSection() {
         setSearch(text)
         if(text.length > 0) {
             try {
-                const response = await axios.get(`https://blog-post-project-api.vercel.app/posts?keyword=${search}`)
-                setSearchResult(response.data.posts)
+                const response = await axios.get(`http://localhost:4001/posts?keyword=${search}`)
+                setSearchResult(response.data.data)
             } catch (error) {
                 console.error("Search error:", error);
             }
@@ -99,7 +97,7 @@ export function ArticleSection() {
                         <button
                             key={category}
                             disabled={selectedCategory === category}
-                            className={`${
+                            className={`cursor-pointer ${
                                 selectedCategory === category
                                     ? "primary-button"
                                     : "secondary-button"
@@ -120,9 +118,9 @@ export function ArticleSection() {
                         value={search}
                         onChange={(e) => handleSearch(e.target.value)}
                     />
-                    {searResult.length > 0 && (
+                    {searchResult.length > 0 && (
                         <div className="absolute bg-white shadow-lg mt-12 rounded-md mx-[15%] md:mx-0">
-                            {searResult.map((post) => (
+                            {searchResult.map((post) => (
                                 <div
                                     key={post.id}
                                     className="p-2 cursor-pointer hover:bg-gray-200"
@@ -190,15 +188,16 @@ export function BlogCard({ post , navigate}) {
     });
 
     return (
-        <div className="flex flex-col-reverse justify-between py-6 px-10 my-8 lg:flex-row primary-color lg:mx-35 mx-15 lg:gap-8">
+        <div 
+        onClick={() => navigate(`/post/${post.id}`)} 
+        className="flex flex-col-reverse justify-between py-6 px-10 my-8 lg:flex-row primary-color lg:mx-35 mx-15 lg:gap-8 cursor-pointer">
             <div className="mt-5 lg:mt-0">
                 <p className="text-primary category-box mb-4">
-                    {post.category}
+                    {post.categories?.name} 
+                    {/* เชื่อมไปอีก table */}
                 </p>
                 <p className="text-fourth text-sm">{formattedDate}</p>
-
-                {/* ใช้ navigate  */}
-                <div onClick={() => navigate(`/post/${post.id}`)} >
+                <div>
                     <h2 className="text-third mt-1 cursor-pointer">{post.title}</h2>
                 </div>
                 <p className="text-primary mt-3 text-sm">{post.description}</p>
