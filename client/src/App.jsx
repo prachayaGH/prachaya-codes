@@ -9,7 +9,7 @@ import {ProjectSection} from './components/ProjectSection'
 import ViewPostPage from './pages/ViewPostPage';
 import NotFoundPage from './pages/NotFoundPage';
 import { Toaster } from "@/components/ui/sonner"
-import SignUpPage from './pages/SignupPage';
+import SignupPage from './pages/SignupPage';
 import LoginPage from './pages/LoginPage';
 import SignupSuccessPage from './pages/SignupSuccessPage';
 
@@ -40,7 +40,7 @@ function App() {
           <Route path='*' element={<NotFoundPage />}/>
 
           {/* Authentication Section */}
-          <Route path="/Signup" element={<SignUpPage />}/>
+          <Route path="/Signup" element={<SignupPage />}/>
           <Route path="/Signup/success" element={<SignupSuccessPage/>} />
           <Route path="/Login" element={<LoginPage />}/>
 
