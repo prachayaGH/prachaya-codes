@@ -5,6 +5,9 @@ import javascriptLogo from '../assets/IMG/JavaScript_logo.png';
 import reactLogo from '../assets/IMG/React_logo.png';
 import vscodelogo from '../assets/IMG/VsCode_logo.png';
 import githublogo from '../assets/IMG/Github_logo.png';
+import nextjsLogo from '../assets/IMG/Next_logo.png';
+import vuejsLogo from '../assets/IMG/Vue_logo.png';
+import supabaseLogo from '../assets/IMG/supabase_logo.png';
 
 export const techStacks = [
     {
@@ -32,6 +35,21 @@ export const techStacks = [
         id: 5,
         image: reactLogo,
         name: "React"
+    },
+    {
+        id: 6,
+        image: nextjsLogo,
+        name: "Next.js"
+    },
+    {
+        id: 7,
+        image: vuejsLogo,
+        name: "Vue.js"
+    },
+    {
+        id: 8,
+        image: supabaseLogo,
+        name: "Supabase"
     },
 ]
 
