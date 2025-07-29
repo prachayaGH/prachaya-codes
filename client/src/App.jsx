@@ -9,7 +9,7 @@ import {ProjectSection} from './components/ProjectSection'
 import ViewPostPage from './pages/ViewPostPage';
 import NotFoundPage from './pages/NotFoundPage';
 import { Toaster } from "@/components/ui/sonner"
-import SignUpPage from './pages/SignUpPage';
+import SignUpPage from './pages/SignupPage';
 import LoginPage from './pages/LoginPage';
 import SignupSuccessPage from './pages/SignupSuccessPage';
 
