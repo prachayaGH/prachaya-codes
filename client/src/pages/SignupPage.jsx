@@ -1,6 +1,6 @@
 import SignupForm from "@/components/SignupForm";
 
-function SignUpPage() {
+function SignupPage() {
   return (
     <div className="min-h-screen flex items-center justify-center px-4">
       <SignupForm />
@@ -8,4 +8,4 @@ function SignUpPage() {
   );
 }
 
-export default SignUpPage;
+export default SignupPage;
