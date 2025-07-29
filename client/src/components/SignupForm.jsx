@@ -203,7 +203,7 @@ function SignupForm() {
             <div className="flex justify-center">
               <button
                 type="submit"
-                className="px-8 py-2 bg-foreground text-white rounded-full hover:bg-muted-foreground transition-colors flex items-center gap-1"
+                className="px-8 py-2 bg-foreground text-white rounded-full hover:bg-muted-foreground transition-colors flex items-center gap-1 cursor-pointer"
                 disabled={state.loading}
               >
                 {state.loading ? (

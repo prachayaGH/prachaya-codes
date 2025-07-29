@@ -125,7 +125,7 @@ function LoginForm() {
           <div className="flex justify-center">
             <button
               type="submit"
-              className="px-8 py-2 bg-foreground text-white rounded-full hover:bg-muted-foreground transition-colors flex items-center gap-1"
+              className="px-8 py-2 bg-foreground text-white rounded-full hover:bg-muted-foreground transition-colors flex items-center gap-1 cursor-pointer"
               disabled={state.loading}
             >
               {state.loading ? (
@@ -140,7 +140,7 @@ function LoginForm() {
         <p className="flex flex-row justify-center gap-1 mt-4 text-sm text-center pt-2 text-muted-foreground font-medium">
           Don&apos;t have an account?{" "}
           <a
-            onClick={() => navigate("/sign-up")}
+            onClick={() => navigate("/Signup")}
             className="text-foreground hover:text-muted-foreground transition-colors underline font-semibold cursor-pointer"
           >
             Sign up
