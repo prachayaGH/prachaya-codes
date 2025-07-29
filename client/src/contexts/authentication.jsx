@@ -4,6 +4,7 @@ import axios from "axios";
 import { supabase } from "@/lib/supabaseClient";
 
 const AuthContext = React.createContext();
+const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:4001";
 
 function AuthProvider(props) {
   const [state, setState] = useState({
@@ -63,7 +64,7 @@ function AuthProvider(props) {
   const register = async (data) => {
     try {
       setState((prevState) => ({ ...prevState, loading: true, error: null }));
-      await axios.post("http://localhost:4001/auth/register", data);
+      await axios.post(`${API_BASE_URL}/auth/register`, data);
       setState((prevState) => ({ ...prevState, loading: false, error: null }));
       return { success: true };
     } catch (error) {
@@ -79,7 +80,7 @@ function AuthProvider(props) {
   const login = async (data) => {
     try {
       setState((prevState) => ({ ...prevState, loading: true, error: null }));
-      const res = await axios.post("http://localhost:4001/auth/login", data, {
+      const res = await axios.post(`${API_BASE_URL}/auth/login`, data, {
         withCredentials: true,
       });
 
@@ -139,7 +140,7 @@ function AuthProvider(props) {
   };
 
   const logout = async () => {
-  await axios.post("http://localhost:4001/auth/logout", {}, {
+  await axios.post(`${API_BASE_URL}/auth/logout`, {}, {
     withCredentials: true
   });
   await supabase.auth.signOut();
