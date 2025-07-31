@@ -171,6 +171,13 @@ a {
   text-decoration: underline;
 }
 
+@keyframes slide-in-down {
+  from { transform: translateY(-100%); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
 
+.slide-in-down {
+  animation: slide-in-down 1.5s ease-out;
+}
 
 
