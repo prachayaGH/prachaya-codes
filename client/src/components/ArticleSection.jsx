@@ -12,6 +12,8 @@ import {
 } from "@/components/ui/select";
 
 export function ArticleSection() {
+    const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:4001";
+
     const categories = ["Highlight", "Cat", "Inspiration", "General"];
     const [selectedCategory, setSelectedCategory] = useState("Highlight");
     const [search, setSearch] = useState("");
@@ -33,8 +35,8 @@ export function ArticleSection() {
             // กำหนด URL ตาม Category
             const url =
                 selectedCategory === "Highlight"
-                    ? `http://localhost:4001/posts?page=${page}&limit=${limit}`
-                    : `http://localhost:4001/posts?category=${selectedCategory}&page=${page}&limit=${limit}`;
+                    ? `${API_BASE_URL}/posts?page=${page}&limit=${limit}`
+                    : `${API_BASE_URL}/posts?category=${selectedCategory}&page=${page}&limit=${limit}`;
 
             const response = await axios.get(url);
             const newPosts = response.data.data;
@@ -190,7 +192,7 @@ export function BlogCard({ post , navigate}) {
     return (
         <div 
         onClick={() => navigate(`/post/${post.id}`)} 
-        className="flex flex-col-reverse justify-between py-6 px-10 my-8 lg:flex-row primary-color lg:mx-35 mx-15 lg:gap-8 cursor-pointer">
+        className="flex flex-col-reverse justify-between py-6 px-10 my-8 lg:flex-row primary-color lg:mx-35 mx-15 lg:gap-8 cursor-pointer hover:scale-105 transition-transform duration-300">
             <div className="mt-5 lg:mt-0">
                 <p className="text-primary category-box mb-4">
                     {post.categories?.name} 

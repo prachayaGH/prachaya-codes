@@ -3,8 +3,8 @@ import profileHome from '@/assets/IMG/profileHome.png'
 
 export function Herosection() {
   return (
-    <section className="pt-20">
-        <div className="flex flex-col items-center md:flex-row gap-20 px-15 ">
+    <section className="pt-20 ">
+        <div className="flex flex-col items-center md:flex-row gap-20 px-15 slide-in-down">
             {/* Left Content */}
             <div>
                 <img src={profileHome} alt={profileHome}  

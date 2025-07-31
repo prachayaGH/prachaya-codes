@@ -30,7 +30,7 @@ export function TechSkills() {
     return (
         <div className="">
             {/* Filter Buttons */}
-            <div className="flex gap-4 mb-6 lg:mx-40 mt-4 mx-15">
+            <div className="flex gap-4 mb-6 lg:mx-40 mt-4 mx-15 ">
                 <button 
                     className={`cursor-pointer ${selectedSkill === "Tech Stacks" ? "primary-button" : "secondary-button"}`}
                     onClick={() => setSelectedSkill("Tech Stacks")}
@@ -46,7 +46,7 @@ export function TechSkills() {
             </div>
             
             {/* Display items */}
-            <div className="lg:grid lg:grid-cols-4 md:grid md:grid-cols-2 grid grid-cols-1 gap-8 lg:mx-40 mx-15">
+            <div className="lg:grid lg:grid-cols-4 md:grid md:grid-cols-2 grid grid-cols-1 gap-8 lg:mx-40 mx-15 ">
                 {skills.map((skill) => (
                     <SkillCard 
                         key={skill.id}
@@ -60,7 +60,7 @@ export function TechSkills() {
 
 function SkillCard(props) {
     return (
-        <div className="primary-border-color border-2 p-5 w-full flex gap-6 items-center">
+        <div className="primary-border-color border-2 p-5 w-full flex gap-6 items-center hover:animate-bounce">
             <img src={props.post.image} alt="" className="w-[40px]"/>
             <p className="text-primary">{props.post.name}</p>
         </div>
