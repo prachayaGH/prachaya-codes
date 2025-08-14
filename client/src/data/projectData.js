@@ -27,7 +27,7 @@ export const ProjectData = [
         description: "A real-time collaboration web platform designed for seamless teamwork. Users can sign in via OAuth 2.0 (Google/GitHub), join live chat rooms, and receive instant notifications. Built with WebSocket for real-time communication and secure user sessions.",
         techStack: ["Vue.js | TypeScript | Tailwind CSS | Python | FastAPI | OAuth 2.0 | Socket.io | AWS"],
         github: "https://github.com/prachayaGH/collab-board",
-        link: "https://collab-board-sabv.onrender.com",
+        link: "https://drive.google.com/file/d/1ysGHLDoGBrPUNODXO2rhmfoc69WX2nyd/view?usp=sharing",
     },
     {
         id: 4,
