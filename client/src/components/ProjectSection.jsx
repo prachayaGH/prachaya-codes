@@ -23,7 +23,7 @@ export function ProjectCard (props) {
         <div className="primary-color p-3 flex flex-col gap-1 hover:scale-105 transition-transform duration-300">
             <div className="flex flex-col justify-between h-full">
             <a href={props.post.link} className="cursor-pointer"> 
-                <img src={props.post.image} alt="" />
+                <img src={props.post.image} alt="project" className="lg:h-46 lg:mx-auto"/>
                 <p className="text-primary text-center mt-2">{props.post.topic}</p>
                 <p className="text-primary text-center text-sm mt-2">{props.post.description}</p>
                 <p className="text-third text-[12px] mt-3">{props.post.techStack}</p>
