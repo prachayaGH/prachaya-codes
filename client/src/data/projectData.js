@@ -38,5 +38,25 @@ export const ProjectData = [
         techStack: ["TypeScript | React Native/Expo | tamagui | Supabase"],
         github: "https://github.com/prachayaGH/amazon-clone/tree/dev",
         link: "https://drive.google.com/file/d/1B1qD2oXQAxDRim_gn2-4lXwCwmtWw8X-/view?usp=sharing",
+    },
+    {
+        id: 5,
+        image: 
+        "https://res.cloudinary.com/dfyzwkjki/image/upload/todo-app_qw3cu5.png",
+        topic: "todo app",
+        description: "A simple To-do List web application built with PHP + MySQL. This project demonstrates basic CRUD operations (Create, Read, Update, Delete) and user interaction with a database.",
+        techStack: ["PHP | MySQL | HTML | CSS | JavaScript | phpMyAdmin | infinityfree"],
+        github: "https://github.com/prachayaGH/todo-app",
+        link: "https://todos-app.rf.gd",
+    },
+    {
+        id: 6,
+        image: 
+        "https://res.cloudinary.com/dfyzwkjki/image/upload/Test-scenario_j5ez9o.png",
+        topic: "test-HomeService",
+        description: "Test Scenarios and Test Cases for critical features such as Login and Sign Up, Automation scripts to validate the Login Success flow using automated testing tools, Demonstrates both manual testing (scenario & case design) and automated testing for efficiency and reliability.",
+        techStack: ["Test Case | Test Scenario | selenium | Javascript"],
+        github: "https://github.com/prachayaGH/test-HomeService",
+        link: "https://docs.google.com/spreadsheets/d/129kezd_v_MArTAWfywePXpDQEGT9QkAhb25d38FF9Yo/edit?usp=sharing",
     }
 ]
