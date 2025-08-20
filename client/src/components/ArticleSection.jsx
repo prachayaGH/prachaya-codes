@@ -73,7 +73,7 @@ export function ArticleSection() {
         setSearch(text)
         if(text.length > 0) {
             try {
-                const response = await axios.get(`http://localhost:4001/posts?keyword=${search}`)
+                const response = await axios.get(`${API_BASE_URL}/posts?keyword=${search}`)
                 setSearchResult(response.data.data)
             } catch (error) {
                 console.error("Search error:", error);

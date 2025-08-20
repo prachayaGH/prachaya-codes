@@ -10,7 +10,10 @@ const PORT = process.env.PORT || 4001;
 app.use(cookieParser());
 app.use(
   cors({
-    origin: ["http://localhost:5173","https://prachaya-codes.vercel.app"],
+    origin: [
+      "http://localhost:5173",
+      "https://prachaya-codes.vercel.app",
+    ],
     credentials: true, // ⬅️ สำคัญมาก
   })
 );
