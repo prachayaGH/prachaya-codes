@@ -13,7 +13,6 @@ app.use(
     origin: [
       "http://localhost:5173",
       "https://prachaya-codes.vercel.app",
-      "https://prachaya-codes-ijvipucob-prachayas-projects-273f8736.vercel.app"
     ],
     credentials: true, // ⬅️ สำคัญมาก
   })
