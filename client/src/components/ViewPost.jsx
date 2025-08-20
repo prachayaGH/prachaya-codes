@@ -18,6 +18,7 @@ import { toast } from "sonner";
 import { use } from "react";
 
 export default function ViewPost() {
+  const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:4001";
   const param = useParams();
   const navigate = useNavigate();
   const [post, setPost] = useState({});
@@ -28,7 +29,7 @@ export default function ViewPost() {
   const getPosts = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:4001/posts/${param.postId}`
+        `${API_BASE_URL}/posts/${param.postId}`
       );
       console.log(response.data.data.categories.name
 );
@@ -174,7 +175,7 @@ function Share({ likesAmount, setDialogState }) {
 }
 
 function Comment({ setDialogState }) {
-const param = useParams();
+  const param = useParams();
   const [comment, setComment] = useState("");
   const [isError, setIsError] = useState(false);
   const [commentFromData, setCommentFromData] = useState([])
